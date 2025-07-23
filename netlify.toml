@@ -1,4 +1,3 @@
-cat << 'EOF' > ~/openverse/rss-deploy/netlify.toml
 [build]
 publish = "rss-deploy/rss"
 command = "echo ✅ OpenVerse RSS build started..."
@@ -8,12 +7,11 @@ command = "echo ✅ OpenVerse RSS build started..."
 
 [[redirects]]
   from = "/"
-  to = "/english/podcast.xml"
+  to = "/rss/english/podcast.xml"
   status = 301
 
 [[headers]]
-  for = "/*"
+  for = "/rss/*"
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
     Cache-Control = "public, max-age=0, must-revalidate"
-EOF
