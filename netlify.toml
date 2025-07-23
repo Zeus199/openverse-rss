@@ -1,5 +1,6 @@
 [build]
 publish = "rss"
+command = "echo OpenVerse RSS build..."
 
 [[redirects]]
   from = "/rss/english/*"
