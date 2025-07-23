@@ -1,6 +1,5 @@
 [build]
-publish = "."
-command = "echo ✅ OpenVerse RSS Build Successful"
+publish = "rss"
 
 [[redirects]]
   from = "/rss/english/*"
