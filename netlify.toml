@@ -1,13 +1,19 @@
+cat << 'EOF' > ~/openverse/rss-deploy/netlify.toml
 [build]
-publish = "rss"
-command = "echo OpenVerse RSS build..."
+publish = "rss-deploy/rss"
+command = "echo ✅ OpenVerse RSS build started..."
+
+[context.production.environment]
+  NODE_VERSION = "18"
 
 [[redirects]]
-  from = "/rss/english/*"
-  to = "/rss/english/:splat"
-  status = 200
+  from = "/"
+  to = "/english/podcast.xml"
+  status = 301
 
-[[redirects]]
-  from = "/rss/spanish/*"
-  to = "/rss/spanish/:splat"
-  status = 200
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+EOF
