@@ -1,3 +1,13 @@
 [build]
 publish = "."
-command = "echo OpenVerse RSS Build Successful"
+command = "echo ✅ OpenVerse RSS Build Successful"
+
+[[redirects]]
+  from = "/rss/english/*"
+  to = "/rss/english/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/rss/spanish/*"
+  to = "/rss/spanish/:splat"
+  status = 200
