@@ -1,6 +1,7 @@
 [build]
+[build]
 publish = "rss-deploy/rss"
-command = "echo ✅ OpenVerse RSS build started..."
+command = "npm install && npm run build"
 
 [context.production.environment]
   NODE_VERSION = "18"
